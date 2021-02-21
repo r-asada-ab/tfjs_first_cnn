@@ -3,8 +3,83 @@
 <head>
     <meta charset="utf-8">
     <title>tfjs_test</title>
+    <style>
+        #train {
+          margin-top: 10px;
+        }
+    
+        label {
+          display: inline-block;
+          width: 250px;
+          padding: 6px 0 6px 0;
+        }
+    
+        .canvases {
+          display: inline-block;
+        }
+    
+        .prediction-canvas {
+          width: 100px;
+        }
+    
+        .pred {
+          font-size: 20px;
+          line-height: 25px;
+          width: 100px;
+        }
+    
+        .pred-correct {
+          background-color: #00cf00;
+        }
+    
+        .pred-incorrect {
+          background-color: red;
+        }
+    
+        .pred-container {
+          display: inline-block;
+          width: 100px;
+          margin: 10px;
+        }
+      </style>
 </head>
 <body>
+
+    <!-- 訓練開始ボタン -->
+    <section>
+        <button id="train">Load Data and Train Model</button>
+    </section>
+
+    <section>
+        <div>プロットテスト</div>
+        <div id="test-plot"></div>
+    </section>
+
+    <section>
+        <!-- ステータス -->
+        <p id="status"></p>
+        <p id="message"></p>
+
+        <div id="stats">
+
+            <!-- 損失 -->
+            <div class="canvases">
+                <label id="loss-label"></label>
+                <div id="loss-canvas"></div>
+            </div>
+
+            <!-- 正確性 -->
+            <div class="canvases">
+                <label id="accuracy-label"></label>
+                <div id="accuracy-canvas"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="images"></div>
+    </section>
+
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
